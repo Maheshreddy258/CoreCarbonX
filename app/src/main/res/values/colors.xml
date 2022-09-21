@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_700">#FF018786</color>
+    <color name="primary_green">#d8f3dc</color>
+    <color name="glossy_transparent">#BCD7EADA</color>
+    <color name="grey">#9E9C9C</color>
+
+
+
+
+
+
+        <color name="purple_200">#009D61</color>
+        <color name="purple_500">#009D61</color>
+        <color name="purple_700">#009D61</color>
+        <!--    <color name="teal_200">#FF03DAC5</color>-->
+        <!--    <color name="teal_700">#FF018786</color>-->
+        <color name="black_tint">#FF000000</color>
+        <color name="black">#000000</color>
+        <color name="black_60">#99000000</color>
+        <color name="white">#FFFFFFFF</color>
+        <color name="neutral">#D1D0D7</color>
+        <color name="indigo">#181636</color>
+        <color name="secon_text">#55555A</color>
+        <color name="blue">#0461E5</color>
+        <color name="blue_10">#1A0461E5</color>
+        <color name="blue_opacity_ten">#33A1E5</color>
+        <color name="ripple">#33AAAAAA</color>
+        <color name="pale_blue">#9BC0F5</color>
+        <color name="pale_blue_20">#329BC0F5</color>
+        <color name="text_input_layout_unfocus">#D1D0D7</color>
+        <color name="text_input_layout_focus">#A3A2AF</color>
+        <color name="helper">#A3A2AF</color>
+        <color name="transparent">#000461E5</color>
+        <color name="transparent2">#CC000000</color>
+        <color name="err_color">#EA3636</color>
+        <color name="why_email_color">#181636</color>
+        <color name="seekbar_background_color">#CDDFFA</color>
+
+
+        <color name="orange_transparent">#22000000</color>
+        <color name="grey_blue">#00555555</color>
+        <color name="background">#E5E5E5</color>
+        <color name="edit_text">#D1D0D7</color>
+        <color name="green">#00B871</color>
+        <color name="switch_green">#00B871</color>
+        <color name="switch_bggreen">#12DE6F</color>
+        <color name="yellow">#F9D649</color>
+        <color name="password_validation_card_background">#F7F7F7</color>
+        <color name="positive">#00B871</color>
+        <color name="three_dot_indicator_active">#B3181636</color>
+        <color name="three_dot_indicator_inactive">#80181636</color>
+        <!--    <color name="activity_stock_data_background">#E1ECFC</color>-->
+        <!--    <color name="activity_date_track_text">#747386</color>-->
+        <!--    <color name="activity_track_process_background">#E3FFFA</color>-->
+        <!--    <color name="activity_track_process_text">#1E9886</color>-->
+        <color name="teal_200">#FF3700B3</color>
+        <!--    <color name="teal_200">#FF03DAC5</color>-->
+        <!--    <color name="teal_700">#FF018786</color>-->
+
+
+        <color name="adhar_text">#030319</color>
+        <color name="blue_grey">#607d8b</color>
+        <color name="emphasis">#31b6e7</color>
+        <color name="primary_black">#0E0E0E</color>
+
+
+        <color name="blue_status_bar">#0658CC</color>
+        <color name="light_grey">#F6F6F6</color>
+        <color name="grid_card_background">#F8F8F8</color>
+        <color name="trans_blue">#660461E5</color>
+
+        <!--    status bar-->
+        <color name="dark_green">#009D61</color>
+        <color name="dark_blue">#0658CC</color>
+        <color name="dark_yellow">#E0C03D</color>
+        <color name="dark_red">#D12A2A</color>
+        <color name="dark_grey">#F2F2F2</color>
+
+        <color name="scroll_track">#B6B6B6</color>
+        <color name="risk_and_investment_card">#F8F8F9</color>
+        <color name="chart_cyan">#3EE3C5</color>
+        <color name="char_yellow">#FFD21B</color>
+        <color name="chart_yaxis">#D8D8D8</color>
+
+        <color name="risk_profile_top_background">#F6F6F9</color>
+        <color name="tab_sub_heading">#747171</color>
+        <color name="anlyst_header">#141414</color>
+        <color name="darker_green">#113D49</color>
+        <color name="card_cyan">#A2EDDE</color>
+        <color name="scatter_chart_axis_color">#E3E3E3</color>
+        <color name="green_cyan">#3BCCB6</color>
+
+        <color name="item_other_pick_top_performer">#45391B</color>
+        <color name="grey_line">#F0F0F2</color>
+        <color name="blue_40">#66E1ECFC</color>
+
+        <color name="dark_white">#FEFEFE</color>
+
+
+
+        <color name="flex_tag_color">#F9F4E0</color>
+
+        <color name="fraction_enabled">#F87E24</color>
+
+        <color name="bottom_sheet_selected_tab">#181735</color>
+        <color name="colorF1F1F1">#F1F1F1</color>
+
+        <color name="light_orange">#F4E9DF</color>
+
+
+
+        <color name="analytics_description">#161616</color>
+        <color name="research_reports_watch">#EBF3FF</color>
+        <color name="research_reports_text">#3A81EF</color>
+        <color name="light_pink">#FFC8C8</color>
+        <color name="tab_round_counter_color">#CDE1FF</color>
+        <color name="activity_stock_data_background">#E1ECFC</color>
+        <color name="activity_date_track_text">#747386</color>
+        <color name="activity_track_process_background">#E3FFFA</color>
+        <color name="activity_track_process_text">#1E9886</color>
+        <color name="other_period">#E6EFFC</color>
+        <color name="grey_transparent">#CBC6C8CC</color>
+
+        <color name="complete_kyc_bg">#205DDE</color>
+        <color name="magenta_green_round">#96EFDF</color>
+
+        <color name="line_dark_red">#990408</color>
+        <color name="line_red">#F22F35</color>
+        <color name="line_yellow">#E7D10C</color>
+        <color name="line_light_green">#A8BD39</color>
+        <color name="line_green">#7E940A</color>
+        <color name="chart_bg_fill">#CCFEE4</color>
+        <color name="chart_bg">#00ED75</color>
+
+
+
+        <color name="polygonViewCircleStrokeColor">#ff59a9ff</color>
+        <color name="polygonViewCircleBackground">#90e5f8ff</color>
+
+        <color name="light_white">#80FFFFFF</color>
+        <color name="button_dark_grey">#2F3043</color>
+        <color name="red">#E13636</color>
+
+
+    </resources>
+
+

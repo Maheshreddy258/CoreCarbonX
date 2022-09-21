@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">Core Carbon X</string>
+    <string name="assigned_list">Assigned List</string>
+    <string name="assigned_list_toolbar">Cook Stove(Assigned List)</string>
+    <string name="cook_stove">Cook Stove</string>
+    <string name="uploading">Uploading…</string>
+    <string name="no_internet">No Internet</string>
+    <string name="uploaded">Uploaded</string>
+    <string name="agreement">Agreement</string>
+    <string name="select_type_of_stove">Select Type of Stove</string>
+    <string name="select_stove_type">Select Stove Type</string>
+    <string name="type_of_stove">Type of Stove</string>
+    <string name="select_manufacturer">Select manufacturer</string>
+    <string name="manufacturer_name">Manufacturer Name</string>
+    <string name="serial_number_on_stove">Serial Number On Stove</string>
+    <string name="upload">Upload</string>
+    <string name="serial_no_cook_stove">Serial No. Cookstove</string>
+    <string name="date_of_distribution">Date of Distribution</string>
+    <string name="stove">Stove</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="branch">Branch</string>
+    <string name="account_number">Account Number</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="bank">Bank</string>
+    <string name="id_image">Id Card</string>
+    <string name="id_number">ID Number</string>
+    <string name="select_id_type">Select ID Type</string>
+    <string name="id_type">ID Type</string>
+    <string name="id_proof">ID Proof</string>
+    <string name="pincode">Pincode</string>
+    <string name="select_village">Select Village</string>
+    <string name="village">Village</string>
+    <string name="select_mandal">Select Mandal</string>
+    <string name="mandal_block">Mandal/Block</string>
+    <string name="select_district">Select District</string>
+    <string name="district">District</string>
+    <string name="select_state">Select State</string>
+    <string name="state">State</string>
+    <string name="fa_gp_hno_full_address_gram_panchayat_house_number">FA/GP/HNO(Full address/Gram Panchayat/House number)</string>
+    <string name="address">Address</string>
+    <string name="click_here_to_get_your_location">Click here to get your location</string>
+    <string name="location">Location</string>
+    <string name="number_of_persons_in_house">Number of Persons in House</string>
+    <string name="traditional_stove">Traditional Stove</string>
+    <string name="beneficiary_with_cookstove_at_home">Beneficiary with cookstove at home</string>
+    <string name="select_year">Select Year</string>
+    <string name="birth_years">Birth Years</string>
+    <string name="select_mobile_type">Select Mobile Type</string>
+    <string name="type_of_mobile">Type of Mobile</string>
+    <string name="beneficiary_mobile_number">Beneficiary Mobile Number</string>
+    <string name="beneficiary_name">Beneficiary Name</string>
+    <string name="beneficiary">Beneficiary</string>
+    <string name="update">Update</string>
+    <string name="submit">Submit</string>
+
+    <string name="please_capture_beneficiary_with_cookstove_at_home">Please capture Beneficiary with cookstove at home</string>
+    <string name="please_upload_beneficiary_with_cookstove_at_home">Please upload Beneficiary with cookstove at home</string>
+    <string name="please_capture_traditional_stove">Please capture Traditional Stove</string>
+    <string name="please_upload_traditional_stove">Please upload Traditional Stove</string>
+    <string name="please_capture_id_card">Please capture Id Card</string>
+    <string name="please_upload_id_card">Please upload Id Card</string>
+    <string name="please_capture_serial_no_cook_stove">Please capture Serial No. Cookstove</string>
+    <string name="please_upload_serial_no_cook_stove">Please upload Serial No. Cookstove</string>
+    <string name="please_capture_agreement">Please capture Agreement</string>
+    <string name="please_upload_agreement">Please upload Agreement</string>
+    <string name="c">C</string>
+    <string name="i">I</string>
+    <string name="user_name_offline_records_count">%1$s(Offline Records:%2$d)</string>
+    <string name="cook_stove_offline_records_count">Cook Stove(Offline Records:%1$d)</string>
+    <string name="user_name_assigned_list">%1$s(Assigned List)</string>
+    <string name="cook_stove_assigned_list">Cook Stove(Assigned List)</string>
+    <string name="sync">Sync</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+
+
+    <string-array name="id_type_array">
+        <item>Select ID Type</item>
+        <item>AADHAR</item>
+        <item>RATION CARD</item>
+        <item>PAN</item>
+        <item>DRIVING LICENCE</item>
+        <item>VOTER</item>
+        <item>E-SHRAM CARD</item>
+    </string-array>
+
+
+    <string-array name="stove_type_array">
+        <item>Select Stove Type</item>
+        <item>Agneekaa Eco Mini</item>
+    </string-array>
+
+
+    <string-array name="manufacturer_array">
+        <item>Select Manufacturer</item>
+        <item>Swami Samarth Electronics Pvt Ltd</item>
+    </string-array>
+
+    <string-array name="type_of_mobile_number_array">
+        <item>Select Type of Mobile</item>
+        <item>Self</item>
+        <item>Family</item>
+        <item>Relative</item>
+        <item>Neighbour</item>
+    </string-array>
+
+
+    <string-array name="season_array">
+        <item>Select Season</item>
+        <item>Rabi</item>
+        <item>Khareef</item>
+        <item>Summer</item>
+
+    </string-array>
+
+    <string-array name="type_of_farming_array">
+        <item>Select Type of Farming</item>
+        <item>Natural</item>
+        <item>Chemical</item>
+
+
+    </string-array>
+
+    <string-array name="measure_array">
+        <item>Select Measure</item>
+        <item>hr</item>
+        <item>Ltr</item>
+        <item>Kgs</item>
+        <item>Number</item>
+    </string-array>
+
+    <string-array name="activity_array">
+        <item>Select Activity</item>
+        <item>No Activity</item>
+        <item>Harvesting</item>
+        <item>Beejamrutham</item>
+        <item>Jeevamrutham</item>
+        <item>Mulching</item>
+        <item>Waaphasa</item>
+        <item>Navadhanya</item>
+        <item>Kaashayams</item>
+        <item>Ghana Jeevamrutham</item>
+        <item>Drava Jeevamrutham</item>
+        <item>Nemhasram</item>
+        <item>Agrihasam ? Brahomasaram</item>
+        <item>Saptha Daryakura</item>
+        <item>White and Yello Plates</item>
+        <item>Peromoondrops</item>
+        <item>Dhasaprani</item>
+        <item>Dhahi</item>
+    </string-array>
+
+</resources>

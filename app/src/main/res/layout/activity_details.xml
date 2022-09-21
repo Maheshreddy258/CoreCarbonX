@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ripple">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/common_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tool_bar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/beneficiary_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Beneficiary"
+                    android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:fontFamily="@font/manrope_extrabold"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/beneficiary_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/card_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/beneficiary_title_tv">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            android:id="@+id/beneficiary_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:drawableEnd="@drawable/star"
+                            android:drawablePadding="2dp"
+                            android:text="Beneficiary Name"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputname"
+                            style="@style/TextInputLayoutAppearance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="18dp"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_lable_tv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:fontFamily="@font/manrope_regular"
+                                android:maxLines="1"
+                                android:paddingStart="0dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="8dp"
+                                android:singleLine="true"
+                                android:textColor="@color/indigo"
+                                android:textFontWeight="500"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <TextView
+                            android:id="@+id/beneficiary_mobile_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="14dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:drawableEnd="@drawable/star"
+                            android:drawablePadding="2dp"
+                            android:text="Beneficiary Mobile Number"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textInputname" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputmobile"
+                            style="@style/TextInputLayoutAppearance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="18dp"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_mobile_lable_tv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:fontFamily="@font/manrope_regular"
+                                android:maxLines="1"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:paddingStart="0dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="8dp"
+                                android:singleLine="true"
+                                android:textColor="@color/indigo"
+                                android:textFontWeight="500"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <TextView
+                            android:id="@+id/beneficiary_dob_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="14dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:text="DOB"
+                            android:drawableEnd="@drawable/star"
+                            android:drawablePadding="2dp"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textInputmobile" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputdob"
+                            style="@style/TextInputLayoutAppearance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="18dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_dob_lable_tv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:fontFamily="@font/manrope_regular"
+                                android:maxLines="1"
+                                android:focusable="false"
+                                android:paddingStart="0dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="8dp"
+                                android:singleLine="true"
+                                android:text="dd/mm/yyyy"
+                                android:textColor="@color/indigo"
+                                android:textFontWeight="500"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <TextView
+                            android:id="@+id/beneficiary_photos_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="14dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:drawablePadding="2dp"
+                            android:visibility="gone"
+                            android:text="Beneficiary Photo"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textInputdob" />
+
+
+                        <TextView
+                            android:id="@+id/beneficiary_house_photo_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:visibility="gone"
+                            android:drawablePadding="2dp"
+                            android:text="House Photo"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/beneficiary_photos_lable_tv"
+                            app:layout_constraintTop_toBottomOf="@id/textInputdob" />
+
+
+                        <ImageView
+                            android:id="@+id/user_photo_iv"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            android:src="@drawable/camera_grey_icon"
+                            app:layout_constraintEnd_toEndOf="@+id/beneficiary_photos_lable_tv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_photos_lable_tv" />
+
+
+                        <TextView
+                            android:id="@+id/user_photo_upload_btn"
+                            android:layout_width="75dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/manrope"
+                            android:text="Upload"
+                            android:visibility="gone"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:background="@drawable/upload_btn_bg"
+                            android:textAllCaps="false"
+                            app:layout_constraintEnd_toEndOf="@+id/user_photo_iv"
+                            app:layout_constraintStart_toStartOf="@+id/user_photo_iv"
+                            app:layout_constraintTop_toBottomOf="@+id/user_photo_iv" />
+
+
+
+
+
+
+                        <ImageView
+                            android:id="@+id/house_photo_iv"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            android:src="@drawable/camera_grey_icon"
+                            app:layout_constraintEnd_toEndOf="@+id/beneficiary_house_photo_lable_tv"
+                            app:layout_constraintStart_toStartOf="@+id/beneficiary_house_photo_lable_tv"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_house_photo_lable_tv" />
+
+
+                        <TextView
+                            android:id="@+id/house_photo_upload_btn"
+                            android:layout_width="75dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/manrope"
+                            android:text="Upload"
+                            android:visibility="gone"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:background="@drawable/upload_btn_bg"
+                            android:textAllCaps="false"
+                            app:layout_constraintEnd_toEndOf="@+id/house_photo_iv"
+                            app:layout_constraintStart_toStartOf="@+id/house_photo_iv"
+                            app:layout_constraintTop_toBottomOf="@+id/house_photo_iv" />
+
+
+                        <TextView
+                            android:id="@+id/beneficiary_persons_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:drawableEnd="@drawable/star"
+                            android:drawablePadding="2dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:text="Number of Persons in House"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_photo_upload_btn" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputpersons"
+                            style="@style/TextInputLayoutAppearance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="5dp"
+                            app:hintEnabled="false"
+                            android:layout_marginEnd="18dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_persons_lable_tv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:fontFamily="@font/manrope_regular"
+                                android:maxLines="1"
+                                android:paddingStart="0dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="8dp"
+                                android:singleLine="true"
+                                android:inputType="number"
+                                android:textColor="@color/indigo"
+                                android:textFontWeight="500"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/beneficiary_location_lable_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="14dp"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="start|center"
+                            android:text="Location"
+                            android:drawableEnd="@drawable/star"
+                            android:drawablePadding="2dp"
+                            android:textColor="@color/secon_text"
+                            android:textFontWeight="400"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textInputpersons" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputlocation"
+                            style="@style/TextInputLayoutAppearance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="18dp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/beneficiary_location_lable_tv">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:fontFamily="@font/manrope_regular"
+                                android:maxLines="1"
+                                android:focusable="false"
+                                android:paddingStart="0dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="8dp"
+                                android:singleLine="true"
+                                android:text="Click here to get your location"
+                                android:textColor="@color/indigo"
+                                android:textFontWeight="500"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/address_lable_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/manrope_extrabold"
+                    android:text="Address"
+                    android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/beneficiary_layout" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/address_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/card_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_lable_tv">
+
+                    <TextView
+                        android:id="@+id/house_number_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="House Number"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputhousenumber"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        app:hintEnabled="false"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/house_number_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/state_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="State"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputhousenumber" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textInputstate"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select states"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/state_lable_tv">
+
+
+                        <!--                            <AutoCompleteTextView-->
+                        <!--                                android:id="@+id/textInputstate_auto_tv"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                                style="@style/TextInputLayoutAppearance"-->
+                        <!--                                android:hint="Select states"-->
+                        <!--                                android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"-->
+                        <!--                                android:layout_marginTop="5dp">-->
+
+                        <!--                            </AutoCompleteTextView>-->
+
+
+
+                    </AutoCompleteTextView>
+
+
+
+                    <!--                        <AutoCompleteTextView-->
+                    <!--                            android:id="@+id/textInputstate"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginStart="17dp"-->
+                    <!--                            android:hint="Select states"-->
+                    <!--                            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"-->
+                    <!--                            android:layout_marginTop="5dp"-->
+                    <!--                            android:layout_marginEnd="18dp"-->
+                    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                            app:layout_constraintTop_toBottomOf="@id/state_lable_tv">-->
+
+                    <!--&lt;!&ndash;                            <com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:background="@color/white"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:fontFamily="@font/manrope_regular"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:maxLines="1"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:paddingStart="0dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:paddingTop="8dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:focusable="false"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:paddingEnd="0dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:paddingBottom="8dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:singleLine="true"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:text="Select State"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:textColor="@color/indigo"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:textFontWeight="500"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:textSize="14sp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;                                android:textStyle="normal" />&ndash;&gt;-->
+
+                    <!--                        </AutoCompleteTextView>-->
+
+
+                    <TextView
+                        android:id="@+id/district_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="District"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputstate" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textInputdistrict"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select district"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/district_lable_tv"/>
+
+
+                    <TextView
+                        android:id="@+id/mandal_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Mandal/Block"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputdistrict" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textInputmandal"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select Mandal"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mandal_lable_tv"/>
+
+
+                    <TextView
+                        android:id="@+id/village_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Village"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputmandal" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textInputvillage"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select Village"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/village_lable_tv"/>
+
+
+
+                    <TextView
+                        android:id="@+id/pincode_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Pincode"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputvillage" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputpincode"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        app:hintEnabled="false"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pincode_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:inputType="number"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/id_proof_lable_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/manrope_extrabold"
+                    android:text="ID Proof"
+                    android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_layout" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/proof_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/card_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/id_proof_lable_tv">
+
+                    <TextView
+                        android:id="@+id/id_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="ID Type"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textInputidtype"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select ID Type"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/id_lable_tv"/>
+
+
+
+
+                    <TextView
+                        android:id="@+id/id_number_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="ID Number"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputidtype" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputidnumber"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="18dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/id_number_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="true"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/id_image_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="ID Image"
+                        android:visibility="gone"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputidnumber" />
+
+
+                    <ImageView
+                        android:id="@+id/id_image_view"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        android:src="@drawable/camera_grey_icon"
+                        app:layout_constraintStart_toStartOf="@+id/id_image_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@id/id_image_lable_tv" />
+
+
+                    <TextView
+                        android:id="@+id/id_photo_upload_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/upload_btn_bg"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/id_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/id_image_view"
+                        app:layout_constraintTop_toBottomOf="@+id/id_image_view" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/stove_lable_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/manrope_extrabold"
+                    android:text="Stove"
+                    android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/proof_layout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/stove_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/card_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stove_lable_tv">
+
+                    <TextView
+                        android:id="@+id/date_of_distribution_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Date of Distribution"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputdateofdistribution"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/date_of_distribution_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="false"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:text="dd/mm/yyyy"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/image_with_traditional_stove_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:visibility="gone"
+                        android:drawablePadding="2dp"
+                        android:text="Image with Traditional Stove"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputdateofdistribution" />
+
+
+                    <TextView
+                        android:id="@+id/image_with_new_stove_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Image with New Stove"
+                        android:visibility="gone"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:drawablePadding="2dp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@id/image_with_traditional_stove_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@id/textInputdateofdistribution" />
+
+
+                    <ImageView
+                        android:id="@+id/traditional_stove_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/camera_grey_icon"
+                        app:layout_constraintEnd_toEndOf="@id/image_with_traditional_stove_lable_tv"
+                        app:layout_constraintStart_toStartOf="@id/image_with_traditional_stove_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@id/image_with_traditional_stove_lable_tv" />
+
+
+                    <TextView
+                        android:id="@+id/traditional_photo_upload_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/upload_btn_bg"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/traditional_stove_iv"
+                        app:layout_constraintStart_toStartOf="@+id/traditional_stove_iv"
+                        app:layout_constraintTop_toBottomOf="@+id/traditional_stove_iv" />
+
+
+
+                    <ImageView
+                        android:id="@+id/new_stove_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        android:src="@drawable/camera_grey_icon"
+                        app:layout_constraintEnd_toEndOf="@id/image_with_new_stove_lable_tv"
+                        app:layout_constraintStart_toStartOf="@id/image_with_new_stove_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@id/image_with_new_stove_lable_tv" />
+
+
+
+                    <TextView
+                        android:id="@+id/new_stove_photo_upload_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/upload_btn_bg"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/new_stove_iv"
+                        app:layout_constraintStart_toStartOf="@+id/new_stove_iv"
+                        app:layout_constraintTop_toBottomOf="@+id/new_stove_iv" />
+
+
+
+                    <TextView
+                        android:id="@+id/serial_number_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Serial Number On Stove"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/traditional_photo_upload_btn" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputserialnumberonstove"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/serial_number_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="true"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/serial_number_image_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:drawablePadding="2dp"
+                        android:visibility="gone"
+                        android:text="Serial Number Image"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputserialnumberonstove" />
+
+
+                    <ImageView
+                        android:id="@+id/serial_number_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="gone"
+                        android:src="@drawable/camera_grey_icon"
+                        app:layout_constraintStart_toStartOf="@id/serial_number_image_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@id/serial_number_image_lable_tv" />
+
+
+                    <TextView
+                        android:id="@+id/serial_number_photo_upload_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/upload_btn_bg"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/serial_number_iv"
+                        app:layout_constraintStart_toStartOf="@+id/serial_number_iv"
+                        app:layout_constraintTop_toBottomOf="@+id/serial_number_iv" />
+
+
+
+                    <TextView
+                        android:id="@+id/manufacturer_name_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:text="Manufacturer Name"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/serial_number_photo_upload_btn" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textinputmanufacturername"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select Manufacturer Name"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/manufacturer_name_lable_tv"/>
+
+                    <TextView
+                        android:id="@+id/type_of_stove_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Type of Stove"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textinputmanufacturername" />
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/textinputtypeofstove"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Select Stove Type"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/type_of_stove_lable_tv"/>
+
+                    <TextView
+                        android:id="@+id/beneficiary_agreement_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:visibility="gone"
+                        android:gravity="start|center"
+                        android:text="Beneficiary Agreement"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:drawablePadding="2dp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textinputtypeofstove" />
+
+
+                    <ImageView
+                        android:id="@+id/agreement_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="gone"
+                        android:src="@drawable/camera_grey_icon"
+                        app:layout_constraintStart_toStartOf="@+id/beneficiary_agreement_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/beneficiary_agreement_lable_tv" />
+
+
+                    <TextView
+                        android:id="@+id/agreement_photo_upload_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/upload_btn_bg"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/agreement_iv"
+                        app:layout_constraintStart_toStartOf="@+id/agreement_iv"
+                        app:layout_constraintTop_toBottomOf="@+id/agreement_iv" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/bank_lable_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/manrope_extrabold"
+                    android:text="Bank"
+                    android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stove_layout" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bank_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/card_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bank_lable_tv">
+
+                    <TextView
+                        android:id="@+id/bank_name_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Bank Name"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputbankname"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        app:hintEnabled="false"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bank_name_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="true"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/account_number_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Account Number"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputbankname" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputaccountnumber"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        app:hintEnabled="false"
+                        android:layout_marginEnd="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/account_number_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="true"
+                            android:fontFamily="@font/manrope_regular"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/branch_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Branch"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputaccountnumber" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputbranch"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="18dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/branch_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="true"
+                            android:fontFamily="@font/manrope_regular"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/ifsc_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="IFSC Code"
+                        android:drawableEnd="@drawable/star"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputbranch" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputifsc"
+                        style="@style/TextInputLayoutAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="18dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ifsc_lable_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:focusable="true"
+                            android:fontFamily="@font/manrope_regular"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/indigo"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/passbook_lable_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="start|center"
+                        android:text="Passbook Photo"
+                        android:visibility="gone"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/secon_text"
+                        android:textFontWeight="400"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputifsc" />
+
+
+                    <ImageView
+                        android:id="@+id/passbook_photo_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="gone"
+                        android:src="@drawable/camera_grey_icon"
+                        app:layout_constraintStart_toStartOf="@+id/passbook_lable_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/passbook_lable_tv" />
+
+
+                    <TextView
+                        android:id="@+id/passbook_photo_upload_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/upload_btn_bg"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/passbook_photo_iv"
+                        app:layout_constraintStart_toStartOf="@+id/passbook_photo_iv"
+                        app:layout_constraintTop_toBottomOf="@+id/passbook_photo_iv" />
+
+
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/submit_btn"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/curved_submit_button_bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Update"
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bank_layout" />
+
+
+
+
+
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
+
+

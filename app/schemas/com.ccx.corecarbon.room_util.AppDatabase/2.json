@@ -1,0 +1,244 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "9d23a1322201a5cc532d88f1d1397660",
+    "entities": [
+      {
+        "tableName": "Form",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`form_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `mobileNumber` TEXT, `typeOfMobile` TEXT, `dateofBirth` TEXT, `beneficiaryPhoto` BLOB, `beneficiaryPhotoPath` TEXT, `traditionalStoveImage` BLOB, `traditionalStoveImagePath` TEXT, `personCount` TEXT, `geoLocation` TEXT, `houseNumber` TEXT, `state` TEXT, `district` TEXT, `mandal` TEXT, `village` TEXT, `pincode` TEXT, `kyc` TEXT, `aadharNumber` TEXT, `aadhar` BLOB, `aadharPath` TEXT, `dateOfDistribution` TEXT, `newStoveImage` BLOB, `newStovePath` TEXT, `serialNumber` TEXT, `manufacturer` TEXT, `typeofStove` TEXT, `agreement` BLOB, `agreementPath` TEXT, `bankName` TEXT, `bankAccountNumber` TEXT, `bankBranch` TEXT, `bankIfsc` TEXT, `createdBy` TEXT, `isOnlineRecord` INTEGER NOT NULL, `onlineFormId` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "form_id",
+            "columnName": "form_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobileNumber",
+            "columnName": "mobileNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "typeOfMobile",
+            "columnName": "typeOfMobile",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateofBirth",
+            "columnName": "dateofBirth",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "beneficiaryPhoto",
+            "columnName": "beneficiaryPhoto",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "beneficiaryPhotoPath",
+            "columnName": "beneficiaryPhotoPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "traditionalStoveImage",
+            "columnName": "traditionalStoveImage",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "traditionalStoveImagePath",
+            "columnName": "traditionalStoveImagePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "personCount",
+            "columnName": "personCount",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "geoLocation",
+            "columnName": "geoLocation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "houseNumber",
+            "columnName": "houseNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "district",
+            "columnName": "district",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mandal",
+            "columnName": "mandal",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "village",
+            "columnName": "village",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pincode",
+            "columnName": "pincode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "kyc",
+            "columnName": "kyc",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "aadharNumber",
+            "columnName": "aadharNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "aadhar",
+            "columnName": "aadhar",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "aadharPath",
+            "columnName": "aadharPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateOfDistribution",
+            "columnName": "dateOfDistribution",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "newStoveImage",
+            "columnName": "newStoveImage",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "newStovePath",
+            "columnName": "newStovePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "serialNumber",
+            "columnName": "serialNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "manufacturer",
+            "columnName": "manufacturer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "typeofStove",
+            "columnName": "typeofStove",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "agreement",
+            "columnName": "agreement",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "agreementPath",
+            "columnName": "agreementPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bankName",
+            "columnName": "bankName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bankAccountNumber",
+            "columnName": "bankAccountNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bankBranch",
+            "columnName": "bankBranch",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bankIfsc",
+            "columnName": "bankIfsc",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdBy",
+            "columnName": "createdBy",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isOnlineRecord",
+            "columnName": "isOnlineRecord",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "onlineFormId",
+            "columnName": "onlineFormId",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "form_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9d23a1322201a5cc532d88f1d1397660')"
+    ]
+  }
+}

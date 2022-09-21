@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99012474860",
+    "project_id": "core-carbon-x",
+    "storage_bucket": "core-carbon-x.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99012474860:android:b34d3ccf7c97dc4a78f2c9",
+        "android_client_info": {
+          "package_name": "com.ccx.corecarbon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99012474860-afh7ploaephpltdul7aiddc4nl09j4j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3nFEtz8CiS9_nRFDGNrqrXB--bg8YoPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99012474860-afh7ploaephpltdul7aiddc4nl09j4j8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
