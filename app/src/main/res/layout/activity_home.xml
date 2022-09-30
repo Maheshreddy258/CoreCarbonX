@@ -18,6 +18,9 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
             app:layout_constraintTop_toBottomOf="@+id/tool_bar">
 
             <com.google.android.material.tabs.TabItem

@@ -25,6 +25,7 @@ import android.provider.Settings;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -1826,6 +1827,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             return;
         }
 
+        progressDialog.show();
         storeImageInRoomDb(beneficiaryname, mobilenumber, mobiletype, numberofpersons, location, district,
                 housenumber, mandal, pincode, state, village, idnumber, idtype, manufacturername,
                 serialnumberonstove, stovetype, accountnumber, branch, ifsc, createdByObject);
@@ -1906,7 +1908,8 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         CoreCarbonSharedPreferences.setMandal(mandal);
         CoreCarbonSharedPreferences.setVillage(village);
         CoreCarbonSharedPreferences.ClearIds();
-        Toast.makeText(getApplicationContext(), "Data stored locally", Toast.LENGTH_SHORT).show();
+        progressDialog.dismiss();
+        Toast.makeText(getApplicationContext(), "Offline record stored successfully", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(CookStoveFormActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
@@ -1928,12 +1931,13 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         }
         String fname = System.currentTimeMillis() + ".jpg";
         File file = new File(direct,fname);
+        Log.d("Stored location", ""+direct+fname);
 
         if (file.exists ()) file.delete ();
         try {
             FileOutputStream out = new FileOutputStream(file);
             imageToSave.compress(Bitmap.CompressFormat.JPEG, 100, out);
-            Toast.makeText(this, "Image Saved", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Image Saved", Toast.LENGTH_SHORT).show();
             out.flush();
             out.close();
 

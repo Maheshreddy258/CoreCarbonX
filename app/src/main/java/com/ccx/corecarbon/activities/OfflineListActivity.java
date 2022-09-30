@@ -1,10 +1,14 @@
 package com.ccx.corecarbon.activities;
 
+import static android.os.Environment.DIRECTORY_DOCUMENTS;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -261,10 +265,15 @@ public class OfflineListActivity extends BaseActivity implements OfflineListAdap
                     attachments.add(new AttachmentModel(id, "agreement", form.agreement));*/
 
                     attachments.add(new AttachmentModel(id, "photo", getBytesFromBitmap(form.beneficiaryPhotoPath)));
+                    deleteFileFromExternalStorage(form.beneficiaryPhotoPath);
                     attachments.add(new AttachmentModel(id, "aadhar", getBytesFromBitmap(form.aadharPath)));
+                    deleteFileFromExternalStorage(form.aadharPath);
                     attachments.add(new AttachmentModel(id, "traditionalStoveImage", getBytesFromBitmap(form.traditionalStoveImagePath)));
+                    deleteFileFromExternalStorage(form.traditionalStoveImagePath);
                     attachments.add(new AttachmentModel(id, "newStoveImage", getBytesFromBitmap(form.newStovePath)));
+                    deleteFileFromExternalStorage(form.newStovePath);
                     attachments.add(new AttachmentModel(id, "agreement", getBytesFromBitmap(form.agreementPath)));
+                    deleteFileFromExternalStorage(form.agreementPath);
                     index = 0;
                     nextSync();
 //                    UploadImageOne(form.beneficiaryPhoto, id, "photo");
@@ -376,6 +385,28 @@ public class OfflineListActivity extends BaseActivity implements OfflineListAdap
                 progressDialog.dismiss();
             }
         });
+    }
+    public void deleteFileFromExternalStorage(String fileName) {
+        String root;
+
+        if (Build.VERSION_CODES.S_V2== Build.VERSION.SDK_INT || Build.VERSION_CODES.S == Build.VERSION.SDK_INT || Build.VERSION_CODES.R == Build.VERSION.SDK_INT) {
+            root = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS).getPath()).toString();
+        } else {
+            root =  Environment.getExternalStorageDirectory().getPath().toString();
+        }
+        try
+        {
+            File file = new File(fileName);
+            Log.d("deleted location", ""+fileName);
+            if(file.exists())
+                file.delete();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            Log.e("App", "Exception while deleting file " + e.getMessage());
+        }
+
     }
 
     private void attachmentSyncRetry(@Nullable String message) {

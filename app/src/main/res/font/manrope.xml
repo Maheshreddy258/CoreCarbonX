@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<!--    <font-->
-<!--        app:font="@font/manrope_bold"-->
-<!--        app:fontStyle="normal"-->
-<!--        app:fontWeight="800" />-->
-<!--    <font-->
+    <!--<font
+        app:font="@font/manrope_bold"
+        app:fontStyle="normal"
+        app:fontWeight="800" />-->
+    <!--<font-->
 <!--        app:font="@font/manrope_extrabold"-->
 <!--        app:fontStyle="normal"-->
 <!--        app:fontWeight="900" />-->
@@ -23,10 +23,10 @@
 <!--        app:fontStyle="normal"-->
 <!--        app:fontWeight="700" />-->
 
-<!--    <font-->
-<!--        app:font="@font/manrope_regular"-->
-<!--        app:fontStyle="normal"-->
-<!--        app:fontWeight="700" />-->
+    <font
+        app:font="@font/manrope_regular"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
 
 <!--    <font-->
 <!--        app:font="@font/manrope_semibold"-->
