@@ -160,6 +160,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             intent.putExtra("village", model.village);
             intent.putExtra("dateOfDistribution", model.dateOfDistribution);
             intent.putExtra("dateofBirth", model.dateofBirth);
+            intent.putExtra("status", model.status);
             context.startActivity(intent);
         }
     }

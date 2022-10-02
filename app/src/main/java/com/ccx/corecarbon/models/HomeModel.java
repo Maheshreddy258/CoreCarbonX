@@ -35,6 +35,7 @@ public class HomeModel {
     public String village;
     public String dateOfDistribution;
     public String dateofBirth;
+    public String status;
 
     public HomeModel() {
     }
@@ -183,6 +184,9 @@ public class HomeModel {
 
         if (jsonObject.has("agreement")) {
             agreementPhoto = jsonObject.getString("agreement");
+        }
+        if (jsonObject.has("status")) {
+            status = jsonObject.getString("status");
         }
 //                            JSONObject createdByObject = new JSONObject();
 //                            try {

@@ -386,23 +386,21 @@ public class OfflineListActivity extends BaseActivity implements OfflineListAdap
             }
         });
     }
+
     public void deleteFileFromExternalStorage(String fileName) {
         String root;
 
-        if (Build.VERSION_CODES.S_V2== Build.VERSION.SDK_INT || Build.VERSION_CODES.S == Build.VERSION.SDK_INT || Build.VERSION_CODES.R == Build.VERSION.SDK_INT) {
+        if (Build.VERSION_CODES.S_V2 == Build.VERSION.SDK_INT || Build.VERSION_CODES.S == Build.VERSION.SDK_INT || Build.VERSION_CODES.R == Build.VERSION.SDK_INT) {
             root = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS).getPath()).toString();
         } else {
-            root =  Environment.getExternalStorageDirectory().getPath().toString();
+            root = Environment.getExternalStorageDirectory().getPath().toString();
         }
-        try
-        {
+        try {
             File file = new File(fileName);
-            Log.d("deleted location", ""+fileName);
-            if(file.exists())
+            Log.d("deleted location", "" + fileName);
+            if (file.exists())
                 file.delete();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             Log.e("App", "Exception while deleting file " + e.getMessage());
         }
@@ -432,8 +430,8 @@ public class OfflineListActivity extends BaseActivity implements OfflineListAdap
 
 
     public byte[] getBytesFromBitmap(String imagePath) {
-        File imgFile = new  File(imagePath);
-        if(imgFile.exists()){
+        File imgFile = new File(imagePath);
+        if (imgFile.exists()) {
             Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
             if (bitmap != null) {
                 ByteArrayOutputStream output = new ByteArrayOutputStream();

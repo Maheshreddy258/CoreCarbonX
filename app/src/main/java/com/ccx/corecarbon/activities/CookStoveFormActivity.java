@@ -97,13 +97,9 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
     private ProgressDialog progressDialog;
     private DateUtil dateUtil;
     private boolean edit;
-    private ByteArrayInputStream byteArrayInputStream1,
-    //            byteArrayInputStream2,
-    byteArrayInputStream3,
-            byteArrayInputStream4,
-            byteArrayInputStream5,
-    //            byteArrayInputStream6,
-//            byteArrayInputStream7,
+    private ByteArrayInputStream byteArrayInputStream1, //            byteArrayInputStream2,
+            byteArrayInputStream3, byteArrayInputStream4, byteArrayInputStream5, //            byteArrayInputStream6,
+    //            byteArrayInputStream7,
     byteArrayInputStream8;
     private Bitmap beneficiaryPhoto_bitmap2, /*housePhoto_birmap2,*/
             idimage_bitmap2, traditionalstove_bitmap2, newstove_bitmap2, /*serialnumber_bitmap2,*/ /*passbook_bitmap2,*/
@@ -173,13 +169,11 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                && ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PERMISSION);
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_PERMISSION);
         }
 
@@ -195,13 +189,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
                 }
             }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
 
-            builder.setActivatedMonth(Calendar.JULY)
-                    .setMinYear(1940)
-                    .setActivatedYear(calendar.get(Calendar.YEAR) - 14)
-                    .setMaxYear(calendar.get(Calendar.YEAR) - 14)
-                    .setTitle("Select Year of Birth")
-                    .showYearOnly()
-                    .build().show();
+            builder.setActivatedMonth(Calendar.JULY).setMinYear(1940).setActivatedYear(calendar.get(Calendar.YEAR) - 14).setMaxYear(calendar.get(Calendar.YEAR) - 14).setTitle("Select Year of Birth").showYearOnly().build().show();
 
         });
 
@@ -556,8 +544,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             String dob = binding.beneficiaryDOBTextView.getText().toString();
             String numberofpersons = binding.beneficiaryPersonsEditText.getText().toString();
             String location = binding.textInputlocation.getEditText().getText().toString();
-            if (location.equalsIgnoreCase("Click here to get your location"))
-                location = "";
+            if (location.equalsIgnoreCase("Click here to get your location")) location = "";
             String housenumber = binding.houseDetailsEditText.getText().toString();
             String state = binding.statetextview.getText().toString();
             String district = binding.districttextview.getText().toString();
@@ -704,22 +691,23 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
                 Toast.makeText(getApplicationContext(), R.string.please_upload_agreement, Toast.LENGTH_SHORT).show();
                 return;
             }
-            UpdateRecord(beneficiaryname, mobilenumber, numberofpersons, location,
-                    housenumber, state, district, mandal, village, pincode, idtype, idnumber,
-                    serialnumberonstove, manufacturername, stovetype, bankname, accountnumber, ifsc, branch, mobiletype);
+            UpdateRecord(beneficiaryname, mobilenumber, numberofpersons, location, housenumber, state, district, mandal, village, pincode, idtype, idnumber, serialnumberonstove, manufacturername, stovetype, bankname, accountnumber, ifsc, branch, mobiletype);
         });
 
 
         binding.submitBtn.setOnClickListener(view -> {
-
+            //for creating the dummy values in offline
+          /*  if (!NetworkUtil.isOnline(this)) {
+                createDummyOfflineData();
+                return;
+            }*/
             String beneficiaryname = binding.beneficiaryNameEditText.getText().toString();
             String mobilenumber = binding.beneficiaryMobileEditText.getText().toString();
             String mobiletype = binding.mobiletypetextview.getText().toString();
             String dob = binding.beneficiaryDOBTextView.getText().toString();
             String numberofpersons = binding.beneficiaryPersonsEditText.getText().toString();
             String location = binding.textInputlocation.getEditText().getText().toString();
-            if (location.equalsIgnoreCase("Click here to get your location"))
-                location = "";
+            if (location.equalsIgnoreCase("Click here to get your location")) location = "";
             String housenumber = binding.houseDetailsEditText.getText().toString();
             String state = binding.statetextview.getText().toString();
             String district = binding.districttextview.getText().toString();
@@ -872,10 +860,15 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
                 Toast.makeText(getApplicationContext(), R.string.please_upload_agreement, Toast.LENGTH_SHORT).show();
                 return;
             }
-            SubmitForm(beneficiaryname, mobilenumber, numberofpersons, location,
-                    housenumber, state, district, mandal, village, pincode, idtype, idnumber,
-                    serialnumberonstove, manufacturername, stovetype, bankname, accountnumber, ifsc, branch, mobiletype);
+            SubmitForm(beneficiaryname, mobilenumber, numberofpersons, location, housenumber, state, district, mandal, village, pincode, idtype, idnumber, serialnumberonstove, manufacturername, stovetype, bankname, accountnumber, ifsc, branch, mobiletype);
         });
+        String status = getIntent().getStringExtra("status");
+        if (status != null && status.equalsIgnoreCase("verified")) {
+            binding.updateBtn.setClickable(false);
+            binding.submitBtn.setClickable(false);
+            binding.updateBtn.setEnabled(false);
+            binding.submitBtn.setEnabled(false);
+        }
     }
 
     public void OpenCamera(int id) {
@@ -943,8 +936,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String filePath = "";
-        if (data != null)
-            filePath = data.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH);
+        if (data != null) filePath = data.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH);
         if (requestCode == BENEFICIARY_PHOTO_CODE && resultCode == -1) {
             binding.userPhotoWarningView.setVisibility(View.GONE);
             isBeneficiaryPhotoPending = true;
@@ -1250,8 +1242,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
     private void getCurrentLocation() {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-                || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
@@ -1286,11 +1277,8 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
     private void AskP() {
 
-        if (ContextCompat.checkSelfPermission(CookStoveFormActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(CookStoveFormActivity.this, new String[]{
-                    Manifest.permission.ACCESS_FINE_LOCATION
-            }, PERMISSION_FINE_LOCATION_LOCATION);
+        if (ContextCompat.checkSelfPermission(CookStoveFormActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(CookStoveFormActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_FINE_LOCATION_LOCATION);
         } else {
             GetLtLg();
         }
@@ -1724,11 +1712,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         return value == null || value.trim().length() == 0;
     }
 
-    private void SubmitForm(String beneficiaryname, String mobilenumber, String numberofpersons, String location,
-                            String housenumber, String state, String district, String mandal, String village,
-                            String pincode, String idtype, String idnumber, String serialnumberonstove,
-                            String manufacturername, String stovetype, String bankname, String accountnumber,
-                            String ifsc, String branch, String mobiletype) {
+    private void SubmitForm(String beneficiaryname, String mobilenumber, String numberofpersons, String location, String housenumber, String state, String district, String mandal, String village, String pincode, String idtype, String idnumber, String serialnumberonstove, String manufacturername, String stovetype, String bankname, String accountnumber, String ifsc, String branch, String mobiletype) {
 
         JSONObject createdByObject = new JSONObject();
         try {
@@ -1801,9 +1785,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
                             CoreCarbonSharedPreferences.setVillage(village);
                             Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CookStoveFormActivity.this, HomeActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                                    Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                    Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             finish();
                             overridePendingTransition(R.anim.fadein, R.anim.fadeout);
@@ -1828,9 +1810,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         }
 
         progressDialog.show();
-        storeImageInRoomDb(beneficiaryname, mobilenumber, mobiletype, numberofpersons, location, district,
-                housenumber, mandal, pincode, state, village, idnumber, idtype, manufacturername,
-                serialnumberonstove, stovetype, accountnumber, branch, ifsc, createdByObject);
+        storeImageInRoomDb(beneficiaryname, mobilenumber, mobiletype, numberofpersons, location, district, housenumber, mandal, pincode, state, village, idnumber, idtype, manufacturername, serialnumberonstove, stovetype, accountnumber, branch, ifsc, createdByObject);
     }
 
     private void storeImageInRoomDb(String beneficiaryname, String mobilenumber, String mobiletype, String numberofpersons, String location, String district, String housenumber, String mandal, String pincode, String state, String village, String idnumber, String idtype, String manufacturername, String serialnumberonstove, String stovetype, String accountnumber, String branch, String ifsc, JSONObject createdByObject) {
@@ -1880,12 +1860,10 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         String date_of_distribution = binding.dateOfDistributionTextView.getText().toString();
         if (date_of_distribution != null && !date_of_distribution.isEmpty())
             form.dateOfDistribution = binding.dateOfDistributionTextView.getText().toString();
-        else
-            form.dateOfDistribution = "";
+        else form.dateOfDistribution = "";
         form.kyc = idtype;
         form.manufacturer = manufacturername;
-        if (newstovephoto != null)
-            form.newStoveImage = newstovephoto;
+        if (newstovephoto != null) form.newStoveImage = newstovephoto;
         form.newStovePath = str_newstovephoto;
         form.serialNumber = serialnumberonstove;
 //            form.serialNumberImage = serialnumberphoto;
@@ -1916,28 +1894,70 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
     }
 
+    private void createDummyOfflineData() {
+        AppDatabase appDatabase = AppDatabase.getInstance(CookStoveFormActivity.this.getApplicationContext());
+        Form form = new Form();
+        form.aadharNumber = "653646434646";
+        form.aadharPath = "/storage/emulated/0/Documents/Core Carbon X/1664689040054.jpg";
+        form.agreementPath = "/storage/emulated/0/Documents/Core Carbon X/1664689040640.jpg";
+        form.bankAccountNumber = "";
+        form.bankBranch = "";
+        form.bankIfsc = "";
+        form.bankName = "";
+        form.beneficiaryPhotoPath = "/storage/emulated/0/Documents/Core Carbon X/1664689038965.jpg";
+        form.createdBy = "{\"_id\":\"6254d16f46628dcf426ed5ce\",\"status\":\"Active\",\"isMobileApp\":\"Yes\",\"cookstoveAccess\":\"Yes\",\"agroAccess\":\"Yes\",\"name\":\"Ajith\",\"mobileNumber\":\"8143389020\",\"role\":\"[\\\"Others\\\"]\",\"isAdmin\":false}";
+        form.dateOfDistribution = "01-10-2022";
+        form.dateofBirth = "2004";
+        form.district = "Cuttack";
+        form.form_id = 0;
+        form.geoLocation = "16.6247103,81.7388746";
+        form.houseNumber = "";
+        form.isOnlineRecord = false;
+        form.kyc = "AADHAR";
+        form.mandal = "Banki";
+        form.mobileNumber = "6535956535";
+        form.manufacturer = "Swami Samarth Electronics Pvt Ltd";
+        form.name = "Swami";
+        form.newStovePath = "/storage/emulated/0/Documents/Core Carbon X/1664689041294.jpg";
+        form.onlineFormId = "";
+        form.personCount = "2";
+        form.pincode = "244333";
+        form.serialNumber = "244333";
+        form.state = "Odisha";
+        form.traditionalStoveImagePath = "/storage/emulated/0/Documents/Core Carbon X/1664689041707.jpg";
+        form.typeOfMobile = "Self";
+        form.typeofStove = "Agneekaa Eco Mini";
+        form.village = "Village1";
+        appDatabase.formDao().insertForm(form);
+        Toast.makeText(getApplicationContext(), "Offline record stored successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(CookStoveFormActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+
     private String storeImageInDirectory(Bitmap imageToSave) {
         String root;
 
-        if (Build.VERSION_CODES.S_V2== Build.VERSION.SDK_INT || Build.VERSION_CODES.S == Build.VERSION.SDK_INT || Build.VERSION_CODES.R == Build.VERSION.SDK_INT) {
+        if (Build.VERSION_CODES.S_V2 == Build.VERSION.SDK_INT || Build.VERSION_CODES.S == Build.VERSION.SDK_INT || Build.VERSION_CODES.R == Build.VERSION.SDK_INT) {
             root = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS).getPath()).toString();
         } else {
-            root =  Environment.getExternalStorageDirectory().getPath().toString();
+            root = Environment.getExternalStorageDirectory().getPath().toString();
         }
 
-        File direct = new File(root+ "/" + getString(R.string.app_name));
+        File direct = new File(root + "/" + getString(R.string.app_name));
         if (!direct.exists()) {
             direct.mkdirs();
         }
         String fname = System.currentTimeMillis() + ".jpg";
-        File file = new File(direct,fname);
-        Log.d("Stored location", ""+direct+fname);
+        File file = new File(direct, fname);
+        Log.d("Stored location", "" + direct + fname);
 
-        if (file.exists ()) file.delete ();
+        if (file.exists()) file.delete();
         try {
             FileOutputStream out = new FileOutputStream(file);
             imageToSave.compress(Bitmap.CompressFormat.JPEG, 100, out);
-           // Toast.makeText(this, "Image Saved", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "Image Saved", Toast.LENGTH_SHORT).show();
             out.flush();
             out.close();
 
