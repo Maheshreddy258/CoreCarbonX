@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.ccx.corecarbon.R;
 import com.ccx.corecarbon.util.CoreCarbonSharedPreferences;
+import com.ccx.corecarbon.util.NetworkUtil;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends BaseActivity {

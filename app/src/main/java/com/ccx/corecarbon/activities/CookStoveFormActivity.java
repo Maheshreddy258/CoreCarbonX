@@ -96,7 +96,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
     TextWatcher textWatcher;
     private ProgressDialog progressDialog;
     private DateUtil dateUtil;
-    private boolean edit;
+    private boolean edit, isProcessing;
     private ByteArrayInputStream byteArrayInputStream1, //            byteArrayInputStream2,
             byteArrayInputStream3, byteArrayInputStream4, byteArrayInputStream5, //            byteArrayInputStream6,
     //            byteArrayInputStream7,
@@ -697,10 +697,13 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
         binding.submitBtn.setOnClickListener(view -> {
             //for creating the dummy values in offline
-          /*  if (!NetworkUtil.isOnline(this)) {
+           /* if (!NetworkUtil.isOnline(this)) {
                 createDummyOfflineData();
                 return;
             }*/
+            if (isProcessing)
+                return;
+            isProcessing = true;
             String beneficiaryname = binding.beneficiaryNameEditText.getText().toString();
             String mobilenumber = binding.beneficiaryMobileEditText.getText().toString();
             String mobiletype = binding.mobiletypetextview.getText().toString();
@@ -738,25 +741,31 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
             if (beneficiaryname.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please enter beneficiary name", Toast.LENGTH_SHORT).show();
+                isProcessing = false;
                 return;
             }
             if (mobilenumber.isEmpty() || mobilenumber.length() < 10) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please enter mobile number", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (mobiletype.toLowerCase(Locale.ROOT).contains("select")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select Mobile Type", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (dob.isEmpty() || dob.contains("Select")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select birth year", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (beneficiaryPhoto_bitmap2 == null) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_capture_beneficiary_with_cookstove_at_home, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (isBeneficiaryPhotoPending && NetworkUtil.isOnline(this)) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_upload_beneficiary_with_cookstove_at_home, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -767,70 +776,87 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             }
             */
             if (traditionalstove_bitmap2 == null) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_capture_traditional_stove, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (isTraditionalStovePending && NetworkUtil.isOnline(this)) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_upload_traditional_stove, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (numberofpersons.isEmpty() || Integer.valueOf(numberofpersons) < 0 || Integer.valueOf(numberofpersons) > 50) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please enter number of persons", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (Integer.parseInt(numberofpersons) <= 0 || Integer.parseInt(numberofpersons) > 50) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Number of persons must be 1 or within 50", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (location.isEmpty()) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please get your location", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (state.isEmpty() || state.contains("Select State")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select state", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (district.isEmpty() || district.contains("Select")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select district", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (mandal.isEmpty() || mandal.contains("Select")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select mandal", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (village.isEmpty() || village.contains("Select")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select village", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (pincode.isEmpty()) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please enter pincode", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (idtype.isEmpty() || state.contains("Select ID Type")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select ID Type", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (idnumber.isEmpty()) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please enter valid ID Number", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (idimage_bitmap2 == null) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_capture_id_card, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (isIdImagePending && NetworkUtil.isOnline(this)) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_upload_id_card, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (dateofdistribution.isEmpty() || dateofdistribution.contains("dd/mm/yyyy")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please enter date of distribution", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (newstove_bitmap2 == null) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_capture_serial_no_cook_stove, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (isNewStovePending && NetworkUtil.isOnline(this)) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_upload_serial_no_cook_stove, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -841,22 +867,27 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
            }
            */
             if (serialnumberonstove.isEmpty()) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please enter serial number on stove", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (manufacturername.isEmpty() || manufacturername.contains("Select Manufacturer Name")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select manufacturer name", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (stovetype.isEmpty() || stovetype.contains("Select Stove Type")) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), "Please select stove type", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (agreement_bitmap2 == null) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_capture_agreement, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (isAgreementPending && NetworkUtil.isOnline(this)) {
+                isProcessing = false;
                 Toast.makeText(getApplicationContext(), R.string.please_upload_agreement, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -864,11 +895,16 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         });
         String status = getIntent().getStringExtra("status");
         if (status != null && status.equalsIgnoreCase("verified")) {
-            binding.updateBtn.setClickable(false);
-            binding.submitBtn.setClickable(false);
-            binding.updateBtn.setEnabled(false);
-            binding.submitBtn.setEnabled(false);
+            isProcessing = true;
+            disableEnableButtons(false);
         }
+    }
+
+    private void disableEnableButtons(boolean isEnable) {
+        binding.updateBtn.setClickable(isEnable);
+        binding.submitBtn.setClickable(isEnable);
+        binding.updateBtn.setEnabled(isEnable);
+        binding.submitBtn.setEnabled(isEnable);
     }
 
     public void OpenCamera(int id) {
@@ -1713,7 +1749,8 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
     }
 
     private void SubmitForm(String beneficiaryname, String mobilenumber, String numberofpersons, String location, String housenumber, String state, String district, String mandal, String village, String pincode, String idtype, String idnumber, String serialnumberonstove, String manufacturername, String stovetype, String bankname, String accountnumber, String ifsc, String branch, String mobiletype) {
-
+        disableEnableButtons(false);
+        isProcessing = true;
         JSONObject createdByObject = new JSONObject();
         try {
             createdByObject.put("_id", CoreCarbonSharedPreferences.getNewId());
@@ -1727,6 +1764,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             createdByObject.put("isAdmin", CoreCarbonSharedPreferences.getisAdmin());
         } catch (JSONException e) {
             e.printStackTrace();
+            isProcessing = false;
         }
         if (NetworkUtil.isOnline(this)) {
             progressDialog.setMessage("Uploading...");
@@ -1775,6 +1813,8 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     String str = new String(responseBody);
                     progressDialog.dismiss();
+                    disableEnableButtons(true);
+                    isProcessing = false;
                     try {
                         JSONObject jsonObject = new JSONObject(str);
                         if (jsonObject.getBoolean("error") == false) {
@@ -1802,7 +1842,9 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                    disableEnableButtons(true);
                     progressDialog.dismiss();
+                    isProcessing = false;
                     Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
@@ -1814,6 +1856,8 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
     }
 
     private void storeImageInRoomDb(String beneficiaryname, String mobilenumber, String mobiletype, String numberofpersons, String location, String district, String housenumber, String mandal, String pincode, String state, String village, String idnumber, String idtype, String manufacturername, String serialnumberonstove, String stovetype, String accountnumber, String branch, String ifsc, JSONObject createdByObject) {
+        disableEnableButtons(false);
+        isProcessing = true;
         AppDatabase appDatabase = AppDatabase.getInstance(CookStoveFormActivity.this.getApplicationContext());
         long totalCount = appDatabase.formDao().getOfflineRecordCount();
         if (totalCount >= 30) {
@@ -1887,10 +1931,12 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
         CoreCarbonSharedPreferences.setVillage(village);
         CoreCarbonSharedPreferences.ClearIds();
         progressDialog.dismiss();
+        disableEnableButtons(true);
         Toast.makeText(getApplicationContext(), "Offline record stored successfully", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(CookStoveFormActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
+        isProcessing = false;
 
     }
 
@@ -1978,6 +2024,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_SHORT).show();
             return;
         }
+        disableEnableButtons(false);
         progressDialog.setMessage("Updating...");
         progressDialog.setCancelable(false);
         progressDialog.show();
@@ -2024,6 +2071,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
                 progressDialog.dismiss();
+                disableEnableButtons(true);
                 try {
                     JSONObject jsonObject = new JSONObject(str);
                     if (jsonObject.getBoolean("error") == false) {
@@ -2046,6 +2094,7 @@ public class CookStoveFormActivity extends BaseActivity implements LocationListe
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 progressDialog.dismiss();
+                disableEnableButtons(true);
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

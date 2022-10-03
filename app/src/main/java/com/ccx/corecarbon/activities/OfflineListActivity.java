@@ -74,7 +74,7 @@ public class OfflineListActivity extends BaseActivity implements OfflineListAdap
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         progressDialog = new ProgressDialog(this);
-        appDatabase = AppDatabase.getInstance(OfflineListActivity.this);
+        appDatabase = AppDatabase.getInstance(this);
 //        sync.setOnClickListener(view -> syncData());
         //
         LoadList();
