@@ -12,12 +12,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/farmer"/>
+            android:background="@drawable/farmer" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/grey_transparent"/>
+            android:background="@color/grey_transparent" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,27 +102,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
                         app:boxBackgroundMode="none"
                         app:hintEnabled="false"
-                        android:layout_marginEnd="10dp"
-                        app:startIconDrawable="@drawable/ic_baseline_phone_android_24"
-                        app:passwordToggleEnabled="false">
+                        app:passwordToggleEnabled="false"
+                        app:startIconDrawable="@drawable/ic_baseline_phone_android_24">
 
                         <androidx.appcompat.widget.AppCompatEditText
                             android:id="@+id/mobile_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
                             android:hint="Enter Mobile Number"
                             android:inputType="number"
-                            android:background="@drawable/edittext_bg"
-                            android:maxLines="1"
                             android:maxLength="10"
+                            android:maxLines="1"
                             android:padding="15dp"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="18sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
 
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -130,23 +129,23 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
                         app:boxBackgroundMode="none"
                         app:hintEnabled="false"
-                        android:layout_marginEnd="10dp"
-                        app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                        app:passwordToggleEnabled="true">
+                        app:passwordToggleEnabled="true"
+                        app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
                         <androidx.appcompat.widget.AppCompatEditText
                             android:id="@+id/password_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
                             android:hint="Enter Password"
                             android:inputType="textPassword"
-                            android:background="@drawable/edittext_bg"
                             android:maxLines="1"
                             android:padding="15dp"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="18sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -188,7 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Version - 2"
+                    android:text="Version - 4"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -210,15 +209,12 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
 
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </layout>
